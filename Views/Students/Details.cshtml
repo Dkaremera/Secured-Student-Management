@@ -1,0 +1,66 @@
+﻿@model SecureStudentManager.Models.Student
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Student</h4>
+    <a href="/StudentDepartmentIDs/AddStudentToDpt">Add to Department</a>
+    <br />
+    <p>Current Department are: </p>
+    @foreach (var dprt in ViewBag.StudentDepartments)
+    {
+        <label>@dprt</label>
+    }
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Name
+        </dt>
+
+        <dd>
+            @Model.Name
+        </dd>
+
+        <dt>
+            Email
+        </dt>
+
+        <dd>
+            @Model.Email
+        </dd>
+
+        <dt>
+            Telephone
+        </dt>
+
+        <dd>
+            @Model.Telephone
+        </dd>
+
+        <dt>
+            Date of Birth
+        </dt>
+
+        <dd>
+            @Model.DoB
+        </dd>
+
+        <dt>
+            Maried
+        </dt>
+
+        <dd>
+            @Model.Maried
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.StudentId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
